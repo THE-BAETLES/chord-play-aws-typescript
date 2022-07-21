@@ -1,6 +1,6 @@
 export type RedisConfigType = {
     ingress: {
-        dbconnection: {
+        dbConnection: {
             port: {
                 to: number;
                 from: number;
