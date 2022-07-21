@@ -14,8 +14,6 @@ export class MongoSecurityGroupProvider implements SecurityGroupProvider {
         }
     }
     getInstance(): SecurityGroup {
-        return new SecurityGroup("mongo-security-group", {
-
-        } )
+        return new SecurityGroup("mongo-security-group", this.securityGroupArgs)
     }
 }

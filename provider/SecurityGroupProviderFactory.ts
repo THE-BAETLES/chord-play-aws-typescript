@@ -1,29 +1,9 @@
-
-export type SecurityGroupType = "INFERENCE" | "API" | "PROGRESS_REDIS" | "MONGO" | "ELB_API" | "MQ_INFERENCE" | "MQ_RECOMMENDATION";
+import { MongoSecurityGroupProvider } from "./MongoSecurityGroupProvider";
+import { SecurityGroupProvider } from "./SecurityGroupProvider";
 export class SecurityGroupProviderFactory {
-    constructor() {}
-    getProvider(type: SecurityGroupType){
-        switch(type){
-            case "INFERENCE":
-                break;
-
-            case "API":
-                break;
-            
-            case "PROGRESS_REDIS":
-                break;
-
-            case "MONGO":
-                break;
-            
-            case "ELB_API":
-                break;
-
-            case "MQ_INFERENCE":
-                break;
-            
-            case "MQ_RECOMMENDATION":
-                break;
-        }
+    // new () describes constructor signature in typescript
+    static getProvider<T extends SecurityGroupProvider>(securityType: {new (): T}): T{
+        return new securityType();
     }
 }
+const test = SecurityGroupProviderFactory.getProvider(MongoSecurityGroupProvider)
