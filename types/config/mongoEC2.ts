@@ -10,7 +10,6 @@ export type MONGO_EC2_CONFIG = {
             port: {
                 from: number;
                 to: number;
-                
             }
         }
     }
