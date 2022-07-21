@@ -1,4 +1,4 @@
-export type RedisConfigType = {
+export type REDIS_EC2_CONFIG_TYPE = {
     ingress: {
         dbConnection: {
             port: {

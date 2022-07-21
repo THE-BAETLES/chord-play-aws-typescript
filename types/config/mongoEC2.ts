@@ -1,4 +1,4 @@
-export type MONGO_EC2_CONFIG = {
+export type MONGO_EC2_CONFIG_TYPE = {
     ingress: {
         dbConnection: {
             port: {
