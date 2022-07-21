@@ -1,16 +1,13 @@
+import {PORT} from "./port"
+
 export type REDIS_EC2_CONFIG_TYPE = {
     ingress: {
         dbConnection: {
-            port: {
-                to: number;
-                from: number;
-            }
+            port: PORT
+            
         }
         ssh: {
-            port: {
-                to: number;
-                from: number;
-            }
+            port: PORT
         }
     }
 }

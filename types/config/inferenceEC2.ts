@@ -1,15 +1,13 @@
+import { PORT } from "./port"
+
 export type INFERENCE_EC2_CONFIG_TYPE = {
     ingress: {
         api: {
-            port: {
-                to: number;
-                from: number;
-            }
+            port: PORT
+        },
+        ssh?: {
+            port: PORT
         }
     }
-    ssh: {
-        port: {
-            
-        }
-    }
+    
 }
