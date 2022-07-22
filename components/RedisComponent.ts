@@ -27,6 +27,10 @@ export class RedisComponent extends pulumi.ComponentResource {
             userData: userData
         }, opts);
 
+        this.registerOutputs(
+            {
+                redisURN: instance.urn
+            }
+        )
     }
-
 }

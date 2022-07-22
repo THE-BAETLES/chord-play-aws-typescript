@@ -25,6 +25,11 @@ export class MongoComponent extends pulumi.ComponentResource {
             ami: "ami-07405dd2e31f0683a",
             vpcSecurityGroupIds: [securityGroup.id],
             userData: userData
-        }, opts);
+        }, );
+
+
+        this.registerOutputs({
+            mongoDatabaseURN: instance.urn
+        })
     }
 }

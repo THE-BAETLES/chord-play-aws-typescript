@@ -5,15 +5,17 @@ import {MongoComponent} from "./components/MongoComponent"
 import { SecurityGroupFactory } from "./services/security/SecurityGroupFactory";
 import { MongoSecurityGroup } from "./services/security/MongoSecurityGroup";
 
-const createDatabase = () => {
-    const mongo = new MongoComponent("chord-play-mongo",{});
-}
+// const createDatabase = () => {
+//     const mongo = new MongoComponent("chord-play-mongo",{});
+// }
 
 // const securityGroupTest = () => {
 //     const sgt = SecurityGroupFactory.getSecurityGroup(MongoSecurityGroup);
 // }
 
-createDatabase();
+// createDatabase();
+
+// export const test = "asdf"
 // securityGroupTest();
 
 
