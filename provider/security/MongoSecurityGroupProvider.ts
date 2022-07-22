@@ -14,7 +14,7 @@ export class MongoSecurityGroupProvider implements SecurityGroupProvider {
                 fromPort: Number("27017"),
                 toPort: Number("27017"),
                 protocol: "tcp",
-            }, {
+            },{
                 fromPort: Number("22"),
                 toPort: Number("22"),
                 protocol: "tcp"
