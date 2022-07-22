@@ -1,5 +1,5 @@
 import { SecurityGroup } from "@pulumi/aws/ec2";
 
-export interface SecurityGroupProvider {
+export interface CustomSecurityGroup{
     getInstance(): SecurityGroup
 }

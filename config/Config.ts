@@ -1,6 +1,6 @@
 import dotenv from "dotenv"
 
 
-export interface ConfigProvider<T> {
+export interface Config<T> {
     getConfig(): T
 }

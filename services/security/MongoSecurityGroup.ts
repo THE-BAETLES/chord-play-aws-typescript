@@ -1,8 +1,7 @@
 import { SecurityGroup } from "@pulumi/aws/ec2";
-import { SecurityGroupProvider } from "./SecurityGroupProvider";
 import { SecurityGroupArgs } from "@pulumi/aws/ec2";
-
-export class MongoSecurityGroupProvider implements SecurityGroupProvider {
+import { CustomSecurityGroup } from "./CustomSecurityGroup";
+export class MongoSecurityGroup implements CustomSecurityGroup {
     private securityGroupArgs: SecurityGroupArgs
     
     constructor(){

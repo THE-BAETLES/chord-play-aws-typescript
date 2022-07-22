@@ -1,8 +1,9 @@
 import { SecurityGroup } from "@pulumi/aws/ec2";
-import { SecurityGroupProvider } from "./SecurityGroupProvider";
+import {CustomSecurityGroup} from "../security/CustomSecurityGroup"
 
-export class RedisSecurityGroupProvider implements SecurityGroupProvider {
+export class APISecurityGroup implements CustomSecurityGroup {
     getInstance(): SecurityGroup {
         throw new Error("Method not implemented.");
     }
+    
 }

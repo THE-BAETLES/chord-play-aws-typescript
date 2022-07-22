@@ -1,10 +1,10 @@
-import { ConfigProvider } from "./ConfigProvider";
-import { INFERENCE_EC2_CONFIG_TYPE } from "../../types/config/inferenceEC2";
-import { MONGO_EC2_CONFIG_TYPE } from "../../types/config/mongoEC2";
-import { REDIS_EC2_CONFIG_TYPE } from "../../types/config/redisEC2";
-import { API_EC2_CONFIG_TYPE } from "../../types/config/apiEC2";
-import { API_ELB_CONFIG_TYPE } from "../../types/config/apiELB";
-import { INFERENCE_SQS_CONFIG_TYPE } from "../../types/config/inferenceSQS";
+import { INFERENCE_EC2_CONFIG_TYPE } from "../types/config/inferenceEC2";
+import { MONGO_EC2_CONFIG_TYPE } from "../types/config/mongoEC2";
+import { REDIS_EC2_CONFIG_TYPE } from "../types/config/redisEC2";
+import { API_EC2_CONFIG_TYPE } from "../types/config/apiEC2";
+import { API_ELB_CONFIG_TYPE } from "../types/config/apiELB";
+import { INFERENCE_SQS_CONFIG_TYPE } from "../types/config/inferenceSQS";
+import { Config } from "./Config";
 
 export type SecurityConfigProviderType = {
     inferenceEC2?: INFERENCE_EC2_CONFIG_TYPE;
@@ -15,7 +15,7 @@ export type SecurityConfigProviderType = {
     inferenceSQS?: INFERENCE_SQS_CONFIG_TYPE
 }
 
-export class SecurityConfigProvider implements ConfigProvider<SecurityConfigProviderType> {
+export class SecurityConfig implements Config<SecurityConfigProviderType> {
     getConfig() {
         return {
             inferenceEC2: {
