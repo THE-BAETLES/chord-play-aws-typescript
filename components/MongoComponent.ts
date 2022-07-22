@@ -11,18 +11,19 @@ export class MongoComponent extends pulumi.ComponentResource {
         super(MONGO_COMPONENT, name);
         const stackName = pulumi.getStack();
         const securtiyGroup: SecurityGroup = SecurityGroupFactory.getSecurityGroup(MongoSecurityGroup);
-        
         const userData = `
         !bin/bash
         sudo service mongod start
         `
-
         const instance = new aws.ec2.Instance(`chord-play-mongo-${stackName}`,{
+            tags: {
+                Name: "chord-play-mongo"
+            },
             instanceType: "t2.small",
-            ami: "chord-play-mongo",
+            ami: "ami-07405dd2e31f0683a",
             vpcSecurityGroupIds: [securtiyGroup.id],
             userData: userData
-        }, ...opts);
+        }, opts);
     }
 
 }

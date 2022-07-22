@@ -5,7 +5,14 @@ import {MongoComponent} from "./components/MongoComponent"
 import { SecurityGroupFactory } from "./services/security/SecurityGroupFactory";
 import { MongoSecurityGroup } from "./services/security/MongoSecurityGroup";
 
- 
+const createDatabase = () => {
+    const mongo = new MongoComponent("chord-play-mongo",{});
+}
+
+createDatabase();
+
+
+
 // Create an AWS resource (S3 Bucket)
 // const bucket = new aws.s3.Bucket("my-bucket", {
 //     website: {
