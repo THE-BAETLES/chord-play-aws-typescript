@@ -1,27 +1,33 @@
 import { SecurityGroup } from "@pulumi/aws/ec2";
 import { SecurityGroupArgs } from "@pulumi/aws/ec2";
 import { CustomSecurityGroup } from "./CustomSecurityGroup";
+
+export const MONGO_SECURITY_GROUP_TAG = "chord-play-mongo-database"
+export const MONGO_SECURITY_GROUP_NAME = "mongo-security-group"
 export class MongoSecurityGroup implements CustomSecurityGroup {
     private securityGroupArgs: SecurityGroupArgs
-    
     constructor(){
         this.securityGroupArgs = {
+            description: MONGO_SECURITY_GROUP_TAG,
+
             tags: {
-                Name: "chord-play-mongo-database"
+                Name: MONGO_SECURITY_GROUP_TAG
             },
             ingress: [{
-                fromPort: Number("27017"),
-                toPort: Number("27017"),
+                cidrBlocks: ["0.0.0.0/0"],
+                fromPort: 27017,
+                toPort: 27017,
                 protocol: "tcp",
             },{
-                fromPort: Number("22"),
-                toPort: Number("22"),
+                cidrBlocks: ["0.0.0.0/0"],
+                fromPort:22,
+                toPort:22,
                 protocol: "tcp"
             }]
         }
     }
 
     getInstance(): SecurityGroup {
-        return new SecurityGroup("mongo-security-group", this.securityGroupArgs)
+        return new SecurityGroup(MONGO_SECURITY_GROUP_NAME, this.securityGroupArgs, {});
     }
 }

@@ -9,7 +9,12 @@ const createDatabase = () => {
     const mongo = new MongoComponent("chord-play-mongo",{});
 }
 
+// const securityGroupTest = () => {
+//     const sgt = SecurityGroupFactory.getSecurityGroup(MongoSecurityGroup);
+// }
+
 createDatabase();
+// securityGroupTest();
 
 
 
