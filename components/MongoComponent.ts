@@ -8,6 +8,7 @@ export const START_MONGO_SERVICE = `
         #!bin/bash
         sudo service mongod start
         `
+        
 export const MONGO_COMPONENT = "pkg:index:Mongocomponent";
 
 export class MongoComponent extends pulumi.ComponentResource {
@@ -26,5 +27,4 @@ export class MongoComponent extends pulumi.ComponentResource {
             userData: userData
         }, opts);
     }
-
 }

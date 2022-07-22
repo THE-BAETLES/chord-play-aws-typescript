@@ -2,10 +2,12 @@ import * as pulumi from "@pulumi/pulumi";
 import * as aws from "@pulumi/aws";
 import { SecurityGroupFactory } from "../services/security/SecurityGroupFactory";
 import { RedisSecurityGroup } from "../services/security/RedisSecurityGroup";
+
 export const START_REDIS_SERVICE = `
     #!bin/bash
-    sudo service mongod start
+    sudo service redis start
 `
+
 export const REDIS_COMPONENT = "pkg:index:Rediscomponent"
 
 export class RedisComponent extends pulumi.ComponentResource {
